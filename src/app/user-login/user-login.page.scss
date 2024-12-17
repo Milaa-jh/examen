@@ -1,0 +1,249 @@
+.auth-content {
+    --background: linear-gradient(135deg, #121212, #1a1a1a);
+  }
+  
+  .login-container {
+    padding: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+  
+    .logo-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      
+      .logo-icon {
+        font-size: 60px;
+        color: #ff4b4b;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        animation: pulse 2s infinite;
+      }
+  
+      .logo-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 3px solid rgba(255, 75, 75, 0.2);
+        border-radius: 50%;
+        animation: ripple 1.5s infinite;
+      }
+    }
+  
+    .title {
+      color: #ffffff;
+      margin-top: 20px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+  
+    .subtitle {
+      color: #ffffff;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+  }
+  
+  .input-container {
+    margin-bottom: 24px;
+  
+    .custom-item {
+      --background: rgba(26, 26, 26, 0.8);
+      --border-color: #333;
+      --highlight-height: 2px;
+      --highlight-color-focused: #ff4b4b;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+  
+      &:hover {
+        --background: rgba(26, 26, 26, 0.9);
+        transform: translateY(-1px);
+      }
+  
+      ion-label {
+        color: #ffffff !important;
+        opacity: 0.9;
+      }
+  
+      ion-input {
+        color: #ffffff !important;
+        --placeholder-color: #ffffff;
+        --placeholder-opacity: 0.7;
+      }
+  
+      .custom-input {
+        color: #ffffff !important;
+        --padding-start: 12px;
+        font-size: 16px;
+      }
+  
+      ion-icon {
+        color: #ff4b4b;
+        font-size: 20px;
+        margin: 0 12px;
+      }
+  
+      .password-toggle {
+        cursor: pointer;
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .login-button {
+    --background: linear-gradient(135deg, #ff4b4b, #ff3333);
+    --background-activated: linear-gradient(135deg, #ff3333, #ff2929);
+    --border-radius: 12px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    height: 48px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+    transition: all 0.3s ease;
+    color: #ffffff;
+  
+    &:hover {
+      --background: linear-gradient(135deg, #ff3333, #ff2929);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+    }
+  
+    .button-icon {
+      margin-right: 8px;
+      color: #ffffff;
+    }
+  
+    span {
+      color: #ffffff;
+    }
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 24px 0;
+    
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  
+    .divider-text {
+      color: #ffffff;
+      padding: 0 16px;
+      font-size: 14px;
+    }
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  
+    ion-button {
+      --border-radius: 50%;
+      --border-color: #ffffff;
+      width: 48px;
+      height: 48px;
+      --padding-start: 0;
+      --padding-end: 0;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-2px);
+      }
+  
+      ion-icon {
+        font-size: 20px;
+        color: #ffffff;
+      }
+    }
+  
+    .google-button {
+      --color: #ffffff;
+    }
+  
+    .facebook-button {
+      --color: #ffffff;
+    }
+  
+    .apple-button {
+      --color: #ffffff;
+    }
+  }
+  
+  // Asegurando que los inputs tengan texto blanco
+  ::ng-deep {
+    ion-item {
+      --highlight-color-focused: #ff4b4b;
+      
+      ion-input {
+        color: #ffffff !important;
+      }
+      
+      ion-label {
+        color: #ffffff !important;
+      }
+    }
+  }
+  
+  // Animaciones
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  // Spinner blanco
+  ion-spinner {
+    --color: #ffffff;
+  }

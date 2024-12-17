@@ -1,0 +1,48 @@
+// Animación de vibración para emergencias no atendidas
+@keyframes vibrate {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-2px, 2px) rotate(-2deg); }
+    30% { transform: translate(2px, -2px) rotate(2deg); }
+    50% { transform: translate(-2px, 2px) rotate(-2deg); }
+    70% { transform: translate(2px, -2px) rotate(2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  
+  // Animación de pulso para emergencias
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  
+  ion-content {
+    --background: #1a1a1a;
+  }
+  
+  ion-item {
+    --background: #2c2c2c;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  
+    &:not(.attended) {
+      animation: vibrate 0.5s infinite, pulse 1.5s infinite;
+    }
+  }
+  
+  ion-item.attended {
+    opacity: 0.6;
+  }
+  
+  ion-label {
+    h2 {
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+  
+  ion-button {
+    --background: #f83b3b;
+    --color: white;
+    text-transform: none;
+  }

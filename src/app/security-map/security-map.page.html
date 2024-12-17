@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mapa de Emergencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #mapContainer id="map" class="map-container"></div>
+  
+  <ion-button 
+    expand="full" 
+    color="primary" 
+    (click)="getCurrentLocation()"
+  >
+    Obtener Ubicación Actual
+  </ion-button>
+</ion-content>

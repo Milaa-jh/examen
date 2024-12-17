@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Emergencia DUOC UC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Barra de búsqueda -->
+  <div class="search-container">
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      (ionInput)="filterContacts($event)"
+      placeholder="Buscar contacto de emergencia"
+      mode="ios"
+      class="custom-searchbar"
+      animated="true">
+    </ion-searchbar>
+  </div>
+
+  <!-- Lista de contactos filtrados -->
+  <ng-container *ngIf="filteredContacts.length > 0; else noContacts">
+    <div class="contacts-container">
+      <div class="contact-list">
+        <div *ngFor="let contact of filteredContacts" 
+             class="contact-item"
+             (click)="callNumber(contact.phone)"
+             [attr.aria-label]="'Llamar a ' + contact.name">
+          <div class="contact-icon">
+            <ion-icon [name]="getContactIcon(contact.type)"></ion-icon>
+          </div>
+          <div class="contact-info">
+            <h3>{{ contact.name }}</h3>
+            <p>{{ contact.phone }} | {{ contact.type }}</p>
+          </div>
+          <div class="contact-action">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Mensaje si no hay contactos -->
+  <ng-template #noContacts>
+    <div class="no-contacts-message">
+      <ion-icon name="search-outline"></ion-icon>
+      <p>No se encontraron contactos</p>
+    </div>
+  </ng-template>
+
+  <!-- Botón flotante para agregar contacto -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentAddContactAlert()" color="danger" aria-label="Agregar contacto">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

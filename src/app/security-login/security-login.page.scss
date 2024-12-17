@@ -1,0 +1,196 @@
+.auth-content {
+    --background: linear-gradient(135deg, #1a1212, #1a1a1a);
+  }
+  
+  .login-container {
+    padding: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+  
+    .logo-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      
+      .logo-icon {
+        font-size: 60px;
+        color: #f83b3b; // Más intenso que el rojo del user login
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        animation: pulse 2s infinite;
+      }
+  
+      .logo-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 4px solid rgba(248, 59, 59, 0.3); // Borde más grueso
+        border-radius: 50%;
+        animation: ripple 1.5s infinite;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          right: -2px;
+          bottom: -2px;
+          border: 2px solid rgba(248, 59, 59, 0.2);
+          border-radius: 50%;
+          animation: ripple 2s infinite;
+        }
+      }
+    }
+  
+    .title {
+      color: #ffffff;
+      margin-top: 20px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px; // Más espaciado para aspecto de seguridad
+      text-transform: uppercase; // Mayúsculas para aspecto más oficial
+    }
+  
+    .subtitle {
+      color: #f83b3b;
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  .input-container {
+    margin-bottom: 24px;
+  
+    .custom-item {
+      --background: rgba(26, 26, 26, 0.9); // Más oscuro que el user login
+      --border-color: #f83b3b;
+      --highlight-height: 2px;
+      --highlight-color-focused: #f83b3b;
+      margin-bottom: 16px;
+      border-radius: 8px; // Más cuadrado para aspecto de seguridad
+      border-left: 3px solid #f83b3b; // Barra lateral distintiva
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+  
+      &:hover {
+        --background: rgba(26, 26, 26, 1);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(248, 59, 59, 0.2);
+      }
+  
+      ion-label {
+        color: #ffffff !important;
+        opacity: 0.9;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+  
+      ion-input {
+        color: #ffffff !important;
+        --placeholder-color: #ffffff;
+        --placeholder-opacity: 0.7;
+        font-family: 'Consolas', monospace; // Fuente tipo terminal
+      }
+  
+      .custom-input {
+        color: #ffffff !important;
+        --padding-start: 12px;
+        font-size: 16px;
+      }
+  
+      ion-icon {
+        color: #f83b3b;
+        font-size: 20px;
+        margin: 0 12px;
+      }
+    }
+  }
+  
+  .login-button {
+    --background: #f83b3b;
+    --background-activated: #d63434;
+    --border-radius: 8px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    height: 48px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(248, 59, 59, 0.3);
+    transition: all 0.3s ease;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+  
+    &:hover {
+      --background: #ff4242;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(248, 59, 59, 0.4);
+    }
+  
+    .button-icon {
+      margin-right: 8px;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  ion-spinner {
+    --color: #ffffff;
+  }

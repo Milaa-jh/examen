@@ -1,0 +1,16 @@
+.map-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  
+  ion-content {
+    --background: transparent;
+    position: relative;
+  }
+  
+  #map {
+    height: calc(100% - 56px); // Restamos el alto del header
+    width: 100%;
+    z-index: 1;
+  }

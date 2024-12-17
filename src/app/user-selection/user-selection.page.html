@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleccionar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="user-selection-container">
+    <div class="selection-card">
+      <h2 class="selection-title">Bienvenido</h2>
+      <p class="selection-subtitle">Por favor, seleccione su tipo de usuario</p>
+      <img src="assets/img/Seleccion_Usuiario.svg" alt="Imagen de selección de usuario" class="selection-image">
+      <div class="button-container">
+        <ion-button expand="block" color="primary" [routerLink]="['/user-login']">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          Usuario
+        </ion-button>
+        <ion-button expand="block" color="secondary" [routerLink]="['/security-login']">
+          <ion-icon name="shield-outline" slot="start"></ion-icon>
+          Seguridad
+        </ion-button>
+      </div>
+    </div>
+  </div>
+  <footer class="app-footer">
+    <p>© 2024 EmergencyApp. Todos los derechos reservados.</p>
+  </footer>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Emergencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="emergencies.length > 0; else noEmergencies">
+    <ion-item 
+      *ngFor="let emergency of emergencies; let i = index" 
+      [ngClass]="{'attended': emergency.attended}"
+    >
+      <ion-label>
+        <h2>Emergencia en {{ emergency.location }}</h2>
+        <p>{{ emergency.timestamp | date:'medium' }}</p>
+        <p *ngIf="emergency.attended" style="color: green;">Atendida</p>
+        <p *ngIf="!emergency.attended" style="color: red;">Pendiente</p>
+      </ion-label>
+      <ion-button 
+        *ngIf="!emergency.attended" 
+        (click)="attendEmergency(i)" 
+        color="primary"
+      >
+        Marcar como atendida
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Plantilla alternativa si no hay emergencias activas -->
+  <ng-template #noEmergencies>
+    <div class="ion-padding" style="color: white; text-align: center;">
+      No hay emergencias activas.
+    </div>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,116 @@
+// Variables
+$primary-color: #FF6363;
+$secondary-color: darken($primary-color, 10%);
+$background-color: #f4f4f4;
+$card-background: #ffffff;
+$text-color: #333333;
+$title-color: #2C3E50;
+$button-height: 50px;
+$button-margin: 16px;
+$button-border-radius: 25px;
+$transition-duration: 0.3s;
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-header {
+  ion-toolbar {
+    --background: $primary-color;
+    
+    ion-title {
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+ion-content {
+  --background: $background-color;
+  background-image: url("data:image/svg+xml,%3Csvg width='250' height='60' viewBox='0 0 250 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3Ctext x='10' y='45' font-family='Arial, sans-serif' font-size='14' fill='%23000000' fill-opacity='0.05'%3EEmergencyApp%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 250px 60px;
+  
+  .user-selection-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 20px;
+
+    .selection-card {
+      background-color: $card-background;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+
+      .selection-title {
+        font-size: 2rem;
+        color: $title-color;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .selection-subtitle {
+        font-size: 1rem;
+        color: $text-color;
+        margin-bottom: 20px;
+      }
+
+      .selection-image {
+        max-width: 60%;
+        height: auto;
+        margin-bottom: 30px;
+      }
+
+      .button-container {
+        ion-button {
+          height: $button-height;
+          margin-bottom: $button-margin;
+          font-size: 1.1rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          --border-radius: #{$button-border-radius};
+          --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform $transition-duration ease, box-shadow $transition-duration ease;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+          
+          &:hover {
+            transform: translateY(-2px);
+            --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+          }
+          
+          ion-icon {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .app-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: $text-color;
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 768px) {
+  .user-selection-container {
+    .selection-card {
+      padding: 40px;
+    }
+  }
+}

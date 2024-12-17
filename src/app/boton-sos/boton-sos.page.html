@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Emergencia DuocUC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Encabezado -->
+  <div class="header">
+    <h1>Presiona el botón si necesitas ayuda</h1>
+  </div>
+
+  <!-- Botón principal SOS -->
+  <div class="sos-container">
+    <button 
+      class="sos-button" 
+      (click)="activarEmergencia()"
+    >
+      <div class="sos-circle">
+        <span>SOS</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Barra de navegación -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button selected>
+        <ion-icon name="alert-circle"></ion-icon>
+        <ion-label>SOS</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateToChat()">
+        <ion-icon name="chatbubbles"></ion-icon>
+        <ion-label>Chat</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateToMap()">
+        <ion-icon name="location"></ion-icon>
+        <ion-label>Ubicación</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateToContacts()">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contacto</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
